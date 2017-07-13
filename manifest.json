@@ -1,0 +1,7 @@
+{
+  "name": "polymer-trip-it",
+  "short_name": "polymer-trip-it",
+  "description": "A port of trip-it to Polymer.",
+  "start_url": "/",
+  "display": "standalone"
+}
