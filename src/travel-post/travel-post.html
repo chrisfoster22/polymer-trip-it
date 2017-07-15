@@ -1,0 +1,27 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="travel-post">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>[[post.location]]</h2>
+    <img src="{{post.img}}">
+  </template>
+
+  <script>
+
+    class TravelPost extends Polymer.Element {
+      static get is() { return 'travel-post'; }
+      static get properties() {
+        return {
+          post: Object
+        };
+      }
+    }
+
+    window.customElements.define(TravelPost.is, TravelPost);
+  </script>
+</dom-module>

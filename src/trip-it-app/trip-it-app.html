@@ -1,5 +1,5 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
-
+<link rel="import" href="../travel-posts/travel-posts.html">
 <dom-module id="trip-it-app">
   <template>
     <style>
@@ -8,6 +8,7 @@
       }
     </style>
     <h2>Hello [[prop1]]!</h2>
+    <travel-posts></travel-posts>
   </template>
 
   <script>
@@ -15,6 +16,9 @@
      * @customElement
      * @polymer
      */
+
+
+
     class TripItApp extends Polymer.Element {
       static get is() { return 'trip-it-app'; }
       static get properties() {
