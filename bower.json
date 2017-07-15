@@ -2,6 +2,7 @@
   "name": "polymer-trip-it",
   "description": "A port of trip-it to Polymer.",
   "main": "index.html",
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0"
   },

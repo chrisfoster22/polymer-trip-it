@@ -17,15 +17,6 @@
   </template>
 
   <script>
-    /**
-     * @customElement
-     * @polymer
-     */
-
-     var myPosts = [
-         {"location": "Barcelona", "img": "http://boringhomeutopics.com/wp-content/uploads/2016/02/barcelona-img.jpg"},
-         {"location": "Stockholm", "img": "http://blog.secretescapes.com/wp-content/uploads/2015/07/stockholm.jpg"}
-     ]
 
     class TravelPosts extends Polymer.Element {
       static get is() { return 'travel-posts'; }
@@ -33,12 +24,19 @@
         return {
           posts: {
             type: Array,
-            value: myPosts
-          }
+            reflectToAttribute: true,
+            notify: true,
+            value: []
+        }
         };
       }
+      ready() {
+          super.ready();
+          fetch('http://localhost:3000/posts')
+          .then(res => res.json())
+          .then(jsonPosts => this.set('posts', jsonPosts));
+      }
     }
-
     window.customElements.define(TravelPosts.is, TravelPosts);
   </script>
 </dom-module>

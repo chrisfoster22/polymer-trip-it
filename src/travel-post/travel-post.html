@@ -6,9 +6,24 @@
       :host {
         display: block;
       }
+
+      .post {
+          min-width: 300px;
+          padding: 20px;
+          display: inline-block;
+      }
+
+      .post-img {
+          width: 100%;
+          background-size: 100% 100%;
+          border-radius: 3%;
+      }
+
     </style>
-    <h2>[[post.location]]</h2>
-    <img src="{{post.img}}">
+    <div class="post">
+        <div class="post-img" style="background-image: url([[post.img_url]]); height: [[imgHeight]]"></div>
+        <div>[[post.location]]</div>
+    </div>
   </template>
 
   <script>
@@ -17,7 +32,11 @@
       static get is() { return 'travel-post'; }
       static get properties() {
         return {
-          post: Object
+          post: Object,
+          imgHeight: {
+              type: String,
+              value: 300 + "px"//(300 / this.props.post.size) + "px";
+          }
         };
       }
     }
