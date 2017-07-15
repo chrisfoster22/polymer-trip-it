@@ -33,12 +33,13 @@
       static get properties() {
         return {
           post: Object,
-          imgHeight: {
-              type: String,
-              value: 300 + "px"//(300 / this.props.post.size) + "px";
-          }
+          imgHeight: String
         };
       }
+     ready() {
+         super.ready();
+         this.set('imgHeight', (300 / this.post.size) + 'px')
+     }
     }
 
     window.customElements.define(TravelPost.is, TravelPost);
